@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clothing store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Link to Bootstrap CSS -->
+    <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="index.html"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="twak.to.html">Live Chat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        <i class="bi bi-cart"></i>
+                        <span id="cart-amount" class="amount">0</span>
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 ml-auto">
+                <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" 
+                type="submit" id="performSearch">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="background-image">
+       <h1> DREAM PRODUCTS</h1>
+ </div>
+
+    <div class="cart" id="shop">
+        
+
+      
+    </div>
+    <section class="contact">
+        <h1 class="contact-heading">Contact Us</h1>
+        <form class="contact-form center">
+          <div class="input-group">
+            <label>Full Name *</label>
+            <input
+              type="text"
+              class="contact-input"
+              placeholder="Enter Your Name"
+              name="full-name"
+            />
+          </div>
+          <div class="input-groups">
+            <div class="input-group">
+              <label>Email *</label>
+              <input
+                type="email"
+                class="contact-input"
+                placeholder="Enter Your Email"
+                name="email"
+              />
+            </div>
+            <div class="input-group">
+              <label>Phone</label>
+              <input
+                type="text"
+                class="contact-input"
+                placeholder="Enter Phone Number"
+                name="phone"
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Message</label>
+            <textarea
+              class="form-textarea"
+              placeholder="Your Message Here..."
+              name="message"
+            ></textarea>
+          </div>
+          <input type="submit" value="Submit" class="form-btn"  id="submit-frm">
+        </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <script src="src/data.js"></script>
+    <script src="src/main.js"></script>
+    
+    <script>
+      document.getElementById("submit-frm").addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const fullName = document.querySelector(".contact-input[name='full-name']").value;
+  const email = document.querySelector(".contact-input[name='email']").value;
+  const phone = document.querySelector(".contact-input[name='phone']").value;
+  const message = document.querySelector(".form-textarea").value;
+
+  // Check if any field is empty
+  if (!fullName || !email || !message) {
+    alert("All fields are mandatory. Please fill out the required fields.");
+  } else if (!email.endsWith("@gmail.com")) {
+    alert("Email should end with @gmail.com");
+  } else {
+    // All fields are filled and email is valid, show thank you message
+    alert("Thank you for your interest!");
+  }
+}); 
+    </script>
+    
+</body>
+</html>
